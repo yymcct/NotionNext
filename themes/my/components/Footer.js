@@ -1,5 +1,4 @@
 import { BeiAnGongAn } from '@/components/BeiAnGongAn'
-import DarkModeButton from '@/components/DarkModeButton'
 import { siteConfig } from '@/lib/config'
 
 /**
@@ -15,33 +14,29 @@ export default function Footer(props) {
     parseInt(since) < currentYear ? since + '-' + currentYear : currentYear
 
   return (
-    <footer className='relative w-full bg-black px-6 border-t'>
-      <DarkModeButton className='text-center pt-4' />
-
-      <div className='text-yellow-300 container mx-auto max-w-4xl py-6 md:flex flex-wrap md:flex-no-wrap md:justify-between items-center text-sm'>
-        <div className='text-center'>
-          &copy;{`${copyrightDate}`} {siteConfig('AUTHOR')}. All rights
-          reserved.
+    <footer className='relative w-full bg-white dark:bg-black border-t border-gray-100 dark:border-hexo-black-gray'>
+      <div className='mx-auto max-w-9/10 px-6 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm text-gray-500 dark:text-gray-400'>
+        <div className='text-center md:text-left'>
+          &copy;{`${copyrightDate}`} {siteConfig('AUTHOR')}. All rights reserved.
         </div>
-        <div className='md:p-0 text-center md:text-right text-xs'>
-          {/* 右侧链接 */}
-          {/* <a href="#" className="text-black no-underline hover:underline">Privacy Policy</a> */}
+
+        <div className='text-center md:text-right text-xs flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-1'>
           {siteConfig('BEI_AN') && (
             <a
               href={siteConfig('BEI_AN_LINK')}
-              className='no-underline hover:underline ml-4'>
+              className='no-underline hover:underline text-gray-500 dark:text-gray-400'>
               {siteConfig('BEI_AN')}
             </a>
           )}
           <BeiAnGongAn />
-          <span className='no-underline ml-4'>
-            Powered by
+          {/* <span className='text-gray-500 dark:text-gray-400'>
+            Powered by{' '}
             <a
               href='https://github.com/tangly1024/NotionNext'
-              className=' hover:underline'>
+              className='no-underline hover:underline text-gray-500 dark:text-gray-400'>
               NotionNext {siteConfig('VERSION')}
             </a>
-          </span>
+          </span> */}
         </div>
       </div>
     </footer>
