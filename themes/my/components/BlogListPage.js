@@ -35,8 +35,10 @@ export default function BlogListPage(props) {
     .replace('.html', '')
 
   return (
-    <div className='w-full md:pr-8 mb-12'>
-      <div id='posts-wrapper'>
+    <div className='w-full max-w-3xl mx-auto mb-12 px-4 md:px-0'>
+      <div
+        id='posts-wrapper'
+        className='divide-y divide-gray-100 dark:divide-hexo-black-gray'>
         {posts?.map((p, index) => (
           <div key={p.id}>
             {SIMPLE_POST_AD_ENABLE && (index + 1) % 3 === 0 && (
@@ -48,7 +50,7 @@ export default function BlogListPage(props) {
         ))}
       </div>
 
-      <div className='flex justify-between text-xs mt-1'>
+      <div className='flex justify-between text-xs mt-6 tracking-wide text-gray-500 dark:text-gray-400'>
         <SmartLink
           href={{
             pathname:
@@ -57,16 +59,16 @@ export default function BlogListPage(props) {
                 : `${pagePrefix}/page/${currentPage - 1}`,
             query: router.query.s ? { s: router.query.s } : {}
           }}
-          className={`${showPrev ? 'text-blue-600 border-b border-blue-400 visible ' : ' invisible bg-gray pointer-events-none '} no-underline pb-1 px-3`}>
-          NEWER POSTS <i className='fa-solid fa-arrow-left'></i>
+          className={`${showPrev ? 'visible' : 'invisible pointer-events-none'} no-underline hover:underline underline-offset-4 pb-1 px-1`}>
+          NEWER
         </SmartLink>
         <SmartLink
           href={{
             pathname: `${pagePrefix}/page/${currentPage + 1}`,
             query: router.query.s ? { s: router.query.s } : {}
           }}
-          className={`${showNext ? 'text-blue-600 border-b border-blue-400 visible' : ' invisible bg-gray pointer-events-none '} no-underline pb-1 px-3`}>
-          OLDER POSTS <i className='fa-solid fa-arrow-right'></i>
+          className={`${showNext ? 'visible' : 'invisible pointer-events-none'} no-underline hover:underline underline-offset-4 pb-1 px-1`}>
+          OLDER
         </SmartLink>
       </div>
     </div>

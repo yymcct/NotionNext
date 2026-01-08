@@ -89,7 +89,7 @@ const LayoutBase = props => {
               ? 'flex-row-reverse'
               : '') + ' w-full flex-1 flex items-start max-w-9/10 mx-auto pt-12'
           }>
-          <div id='container-inner ' className='w-full flex-grow min-h-fit'>
+          <div id='container-inner ' className='w-full flex-grow min-h-fit max-w-3xl mx-auto mb-12 px-4 md:px-0'>
             <Transition
               show={!onLoading}
               appear={true}
@@ -107,13 +107,13 @@ const LayoutBase = props => {
             <AdSlot type='native' />
           </div>
 
-          {fullWidth ? null : (
+          {/* {fullWidth ? null : (
             <div
               id='right-sidebar'
               className='hidden xl:block flex-none sticky top-8 w-96 border-l dark:border-gray-800 pl-12 border-gray-100'>
               <SideBar {...props} />
             </div>
-          )}
+          )} */}
         </div>
 
         <div className='fixed right-4 bottom-4 z-20'>
@@ -227,7 +227,7 @@ const LayoutSlug = props => {
 
           {/* 广告嵌入 */}
           {/* <AdSlot type={'in-article'} /> */}
-          <WWAds orientation='horizontal' className='w-full' />
+          {/* <WWAds orientation='horizontal' className='w-full' /> */}
 
           <div id='article-wrapper'>
             {/* Notion文章主体 */}
@@ -238,12 +238,12 @@ const LayoutSlug = props => {
           <ShareBar post={post} />
 
           {/* 广告嵌入 */}
-          <AdSlot type={'in-article'} />
+          {/* <AdSlot type={'in-article'} /> */}
 
           {post?.type === 'Post' && (
             <>
               <ArticleAround prev={prev} next={next} />
-              <RecommendPosts recommendPosts={recommendPosts} />
+              {/* <RecommendPosts recommendPosts={recommendPosts} /> */}
             </>
           )}
 

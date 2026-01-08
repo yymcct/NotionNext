@@ -10,17 +10,16 @@ export default function Footer(props) {
   const d = new Date()
   const currentYear = d.getFullYear()
   const since = siteConfig('SINCE')
-  const copyrightDate =
-    parseInt(since) < currentYear ? since + '-' + currentYear : currentYear
+  const copyrightDate = currentYear
 
   return (
-    <footer className='relative w-full bg-white dark:bg-black border-t border-gray-100 dark:border-hexo-black-gray'>
-      <div className='mx-auto max-w-9/10 px-6 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm text-gray-500 dark:text-gray-400'>
+    <footer className='relative w-full bg-white dark:bg-black   dark:border-hexo-black-gray max-w-3xl mx-auto mb-12 px-4 md:px-0'>
+      <div className='mx-auto  flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-gray-500 dark:text-gray-400'>
         <div className='text-center md:text-left'>
-          &copy;{`${copyrightDate}`} {siteConfig('AUTHOR')}. All rights reserved.
+          &copy;{`${copyrightDate}`} {siteConfig('AUTHOR')}
         </div>
 
-        <div className='text-center md:text-right text-xs flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-1'>
+        {/* <div className='text-center md:text-right text-xs flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-1'>
           {siteConfig('BEI_AN') && (
             <a
               href={siteConfig('BEI_AN_LINK')}
@@ -29,15 +28,7 @@ export default function Footer(props) {
             </a>
           )}
           <BeiAnGongAn />
-          {/* <span className='text-gray-500 dark:text-gray-400'>
-            Powered by{' '}
-            <a
-              href='https://github.com/tangly1024/NotionNext'
-              className='no-underline hover:underline text-gray-500 dark:text-gray-400'>
-              NotionNext {siteConfig('VERSION')}
-            </a>
-          </span> */}
-        </div>
+        </div> */}
       </div>
     </footer>
   )
